@@ -1,0 +1,105 @@
+body {
+    background-color: brown;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+}
+h1 {
+    font-size: 3rem;
+    color: white;
+}
+h2 {
+    font-size: 2rem;
+    color: black;
+}
+.container {
+    height: 100vh;
+    display: grid;      
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas: 
+    "header header header" 
+    "nav nav nav" 
+    "main main main" 
+    "products products products" 
+    "footer footer footer";
+    row-gap: 2rem;
+    justify-content: center;
+ }
+ /* header */
+ header {
+    grid-area: header;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ /* navigation menu */
+ nav {
+    grid-area: nav;
+    
+ }
+ nav ul {
+    grid-area: nav;
+    list-style: none;
+    background-color: black;
+    height: 2rem;
+    border-radius: 3rem;
+    /* text-align: center; */
+    display: flex; 
+    justify-content: space-between;
+    
+}
+
+nav li a{
+    padding: 5px;
+   color: white;
+   text-decoration: none;
+}
+nav li a:hover {
+   color: darkcyan;
+}
+
+ /* main */
+ main {
+    grid-area: main;
+ }
+main section .contents {
+    border-radius: 3rem;
+    border: 5px solid black;
+    background-image: url(images/2.jpg);
+    color: white;
+    font-size: larger;
+}
+ main section .products {
+    grid-area: products;
+    display: flex;
+    
+ }
+ main section .products div {
+    background-color: rgb(202, 209, 209);
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 3rem;
+    text-align: center;
+ }
+
+ /* footer */
+ footer {
+    grid-area: footer;
+    display:flex;
+    justify-content: space-around;
+    
+ }
+ footer div:hover {
+    color: blue;
+    animation: rotate360 5s infinite linear;
+ }
+ @keyframes rotate360 {
+   from {
+    transform: rotateX(0deg);
+   }
+   to {
+    transform: rotateX(360deg);
+   }
+ }
